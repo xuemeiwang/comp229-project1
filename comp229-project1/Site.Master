@@ -8,23 +8,64 @@
 
 <html lang="en">
 <head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <!-- Css Section -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/app.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-         <!-- Main Navigation -->
+        <!-- Main Navigation -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx"><i class="fa fa-trophy fa-lg"></i> Game Tracking Site</a>
+                </div>
 
-         <!-- Main Content -->
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-         <!-- Footer Section -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-flag-checkered fa-lg"></i> Home</a></li>
+                        <li id="register" runat="server"><a href="Register.aspx"><i class="fa fa-user fa-lg"></i> Register</a></li>
+                        <li id="login" runat="server"><a href="Login.aspx"><i class="fa fa-key fa-lg"></i> Login</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!-- Main Content -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Footer Section -->
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <h4>&copy; 2016 - Game Tracker - All Rights Reserved</h4>
+            </div>
+        </nav>
+
     </form>
-     <!-- Scripts Section -->
+
+    <!-- Scripts Section -->
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/app.js"></script>
 </body>
 </html>
