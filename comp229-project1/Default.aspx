@@ -9,6 +9,8 @@
     <asp:GridView ID="GameInfoGridView1" runat="server" AutoGenerateColumns="false"
         CssClass="table table-bordered table-striped table-hover">
         <Columns>
+            <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
+            <asp:BoundField DataField="WeekNumber" HeaderText="Week" Visible="true" />
             <asp:TemplateField HeaderText="Total Scores" Visible="true">
                 <ItemTemplate>
                     <%# Convert.ToInt32(Eval("TeamScore1")) + Convert.ToInt32(Eval("TeamScore2"))%>
@@ -18,29 +20,43 @@
         </Columns>
     </asp:GridView>
 
-    <asp:GridView ID="Team1GridView1" runat="server" AutoGenerateColumns="false"
+    <asp:GridView ID="TeamInfo1GridView1" runat="server" AutoGenerateColumns="false"
         CssClass="table table-bordered table-striped table-hover">
         <Columns>
-            <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
-            <asp:BoundField DataField="WeekNumber" HeaderText="Week" Visible="true" />
-            <asp:BoundField DataField="TeamID1" HeaderText="Team ID" Visible="true" />
-            <asp:BoundField DataField="TeamScore1" HeaderText="Team Score" Visible="true" />
-            <%-- 
             <asp:BoundField DataField="TeamName" HeaderText="Team Name" Visible="true" />
             <asp:BoundField DataField="TeamDescription" HeaderText="Team Description" Visible="true" />
-                --%>
+        </Columns>
+    </asp:GridView>
+    <asp:GridView ID="TeamResult1GridView1" runat="server" AutoGenerateColumns="false"
+        CssClass="table table-bordered table-striped table-hover">
+        <Columns>
+            <asp:BoundField DataField="TeamID1" HeaderText="Team ID" Visible="true" />
+            <asp:BoundField DataField="TeamScore1" HeaderText="Total Scored Points" Visible="true" />
+            <asp:BoundField DataField="TeamScore2" HeaderText="Total Allowed Points" Visible="true" />
+            <%-- 
+            <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
+            <asp:BoundField DataField="WeekNumber" HeaderText="Week" Visible="true" />
+            <asp:BoundField DataField="TeamName" HeaderText="Team Name" Visible="true" />
+            <asp:BoundField DataField="TeamDescription" HeaderText="Team Description" Visible="true" />
+            --%>
         </Columns>
     </asp:GridView>
 
-    <asp:GridView ID="Team2GridView1" runat="server" AutoGenerateColumns="false"
+    <asp:GridView ID="TeamInfo2GridView1" runat="server" AutoGenerateColumns="false"
         CssClass="table table-bordered table-striped table-hover">
         <Columns>
-            <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
-            <asp:BoundField DataField="WeekNumber" HeaderText="Week" Visible="true" />
-            <asp:BoundField DataField="TeamID2" HeaderText="Team ID" Visible="true" />
-            <asp:BoundField DataField="TeamScore2" HeaderText="Team Score" Visible="true" />
             <asp:BoundField DataField="TeamName" HeaderText="Team Name" Visible="true" />
             <asp:BoundField DataField="TeamDescription" HeaderText="Team Description" Visible="true" />
         </Columns>
-    </asp:GridView></asp:Content>
+    </asp:GridView>
+    <asp:GridView ID="TeamResult2GridView1" runat="server" AutoGenerateColumns="false"
+        CssClass="table table-bordered table-striped table-hover">
+        <Columns>
+            <asp:BoundField DataField="TeamID2" HeaderText="Team ID" Visible="true" />
+            <asp:BoundField DataField="TeamScore2" HeaderText="Total Scored Points" Visible="true" />
+            <asp:BoundField DataField="TeamScore1" HeaderText="Total Allowed Points" Visible="true" />
+        </Columns>
+    </asp:GridView>
+
+</asp:Content>
 
