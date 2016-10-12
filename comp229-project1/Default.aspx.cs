@@ -41,6 +41,14 @@ namespace comp229_project1
                 GameInfoGridView1.DataBind();
 
                 // query the result Table using EF and LINQ
+                /*
+                var results = (from allResults in db.Results
+                               join allTeams in db.Teams on allResults.TeamID1 equals allTeams.TeamID
+                               where allResults.GameID == 1
+                               where allResults.WeekNumber == 1
+                               where allResults.TeamID1 == 100
+                               select allResults);
+                               */
                 var results = (from allResults in db.Results
                                where allResults.GameID == 1
                                where allResults.WeekNumber == 1
@@ -48,8 +56,8 @@ namespace comp229_project1
                                select allResults);
 
                 // bind the result to the GameResult GridView
-                GameGridView1.DataSource = results.ToList();
-                GameGridView1.DataBind();
+                Team1GridView1.DataSource = results.ToList();
+                Team1GridView1.DataBind();
             }
 
         }

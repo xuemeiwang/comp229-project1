@@ -22,12 +22,21 @@ namespace comp229_project1 {
         protected global::System.Web.UI.WebControls.GridView GameInfoGridView1;
         
         /// <summary>
-        /// GameGridView1 control.
+        /// Team1GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GameGridView1;
+        protected global::System.Web.UI.WebControls.GridView Team1GridView1;
+        
+        /// <summary>
+        /// Team2GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Team2GridView1;
     }
 }
