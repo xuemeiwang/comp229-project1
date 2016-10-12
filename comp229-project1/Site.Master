@@ -5,8 +5,7 @@
 <!-- Student ID: 300853384 & 300771177 -->
 <!-- Date: Oct 4, 2016 -->
 <!-- Site.Master File -->
-
-<html lang="en">
+<!-- html lang="en" -->
 <head runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +16,6 @@
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,10 +47,10 @@
             <!-- /.container-fluid -->
         </nav>
         <!-- Main Content -->
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        </main>
         <!-- Footer Section -->
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="container">
@@ -68,4 +65,4 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/app.js"></script>
 </body>
-</html>
+</!-->
