@@ -153,7 +153,142 @@ namespace comp229_project1
                 // bind the result to the TeamResult GridView
                 TeamResult2GridView2.DataSource = team22Result.ToList();
                 TeamResult2GridView2.DataBind();
+
+
+                // Game 3
+                // query the Results Table using EF and LINQ
+                var game3Info = (from allInfo in db.Results
+                                 where allInfo.GameID == 3
+                                 where allInfo.WeekNumber == 1
+                                 select allInfo);
+
+                // bind the result to the GameInfo GridView
+                GameInfoGridView3.DataSource = game3Info.ToList();
+                GameInfoGridView3.DataBind();
+
+
+                // query the information form Team 1
+                // query the Teams Table using EF and LINQ
+                var team31Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 3
+                                  where allInfo.TeamID == 104
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo1GridView3.DataSource = team31Info.ToList();
+                TeamInfo1GridView3.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team31Result = (from allResults in db.Results
+                                    where allResults.GameID == 3
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID1 == 104
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult1GridView3.DataSource = team31Result.ToList();
+                TeamResult1GridView3.DataBind();
+
+
+                // query the information form Team 2
+                // query the Teams Table using EF and LINQ
+                var team32Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 3
+                                  where allInfo.TeamID == 105
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo2GridView3.DataSource = team32Info.ToList();
+                TeamInfo2GridView3.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team32Result = (from allResults in db.Results
+                                    where allResults.GameID == 3
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID2 == 105
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult2GridView3.DataSource = team32Result.ToList();
+                TeamResult2GridView3.DataBind();
+
+
+                // Game 4
+                // query the Results Table using EF and LINQ
+                var game4Info = (from allInfo in db.Results
+                                 where allInfo.GameID == 4
+                                 where allInfo.WeekNumber == 1
+                                 select allInfo);
+
+                // bind the result to the GameInfo GridView
+                GameInfoGridView4.DataSource = game4Info.ToList();
+                GameInfoGridView4.DataBind();
+
+
+                // query the information form Team 1
+                // query the Teams Table using EF and LINQ
+                var team41Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 4
+                                  where allInfo.TeamID == 106
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo1GridView4.DataSource = team41Info.ToList();
+                TeamInfo1GridView4.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team41Result = (from allResults in db.Results
+                                    where allResults.GameID == 4
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID1 == 106
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult1GridView4.DataSource = team41Result.ToList();
+                TeamResult1GridView4.DataBind();
+
+
+                // query the information form Team 2
+                // query the Teams Table using EF and LINQ
+                var team42Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 4
+                                  where allInfo.TeamID == 107
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo2GridView4.DataSource = team42Info.ToList();
+                TeamInfo2GridView4.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team42Result = (from allResults in db.Results
+                                    where allResults.GameID == 4
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID2 == 107
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult2GridView4.DataSource = team42Result.ToList();
+                TeamResult2GridView4.DataBind();
             }
+        }
+
+        protected void PreviousButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void NextButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PreviousWeekButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void NextWeekButton_Click(object sender, EventArgs e)
+        {
 
         }
     }
