@@ -31,14 +31,15 @@ namespace comp229_project1
             // connect to EF DB
             using (GameContext db = new GameContext())
             {
+                // Game 1
                 // query the Results Table using EF and LINQ
-                var gameInfo = (from allInfo in db.Results
-                                where allInfo.GameID == 1
-                                where allInfo.WeekNumber == 1
-                                select allInfo);
+                var game1Info = (from allInfo in db.Results
+                                 where allInfo.GameID == 1
+                                 where allInfo.WeekNumber == 1
+                                 select allInfo);
 
                 // bind the result to the GameInfo GridView
-                GameInfoGridView1.DataSource = gameInfo.ToList();
+                GameInfoGridView1.DataSource = game1Info.ToList();
                 GameInfoGridView1.DataBind();
 
 
@@ -52,48 +53,106 @@ namespace comp229_project1
                                select allResults);
                 */
                 // query the Teams Table using EF and LINQ
-                var team1Info = (from allInfo in db.Teams
-                                 where allInfo.GameID == 1
-                                 where allInfo.TeamID == 100
-                                 select allInfo);
+                var team11Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 1
+                                  where allInfo.TeamID == 100
+                                  select allInfo);
 
                 // bind the result to the TeamInfo GridView
-                TeamInfo1GridView1.DataSource = team1Info.ToList();
+                TeamInfo1GridView1.DataSource = team11Info.ToList();
                 TeamInfo1GridView1.DataBind();
 
                 // query the Results Table using EF and LINQ
-                var team1Result = (from allResults in db.Results
-                                   where allResults.GameID == 1
-                                   where allResults.WeekNumber == 1
-                                   where allResults.TeamID1 == 100
-                                   select allResults);
+                var team11Result = (from allResults in db.Results
+                                    where allResults.GameID == 1
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID1 == 100
+                                    select allResults);
 
                 // bind the result to the TeamResult GridView
-                TeamResult1GridView1.DataSource = team1Result.ToList();
+                TeamResult1GridView1.DataSource = team11Result.ToList();
                 TeamResult1GridView1.DataBind();
 
 
                 // query the information form Team 2
                 // query the Teams Table using EF and LINQ
-                var team2Info = (from allInfo in db.Teams
-                                 where allInfo.GameID == 1
-                                 where allInfo.TeamID == 101
-                                 select allInfo);
+                var team12Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 1
+                                  where allInfo.TeamID == 101
+                                  select allInfo);
 
                 // bind the result to the TeamInfo GridView
-                TeamInfo2GridView1.DataSource = team2Info.ToList();
+                TeamInfo2GridView1.DataSource = team12Info.ToList();
                 TeamInfo2GridView1.DataBind();
 
                 // query the Results Table using EF and LINQ
-                var team2Result = (from allResults in db.Results
-                                   where allResults.GameID == 1
-                                   where allResults.WeekNumber == 1
-                                   where allResults.TeamID2 == 101
+                var team12Result = (from allResults in db.Results
+                                    where allResults.GameID == 1
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID2 == 101
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult2GridView1.DataSource = team12Result.ToList();
+                TeamResult2GridView1.DataBind();
+
+
+                // Game 2
+                // query the Results Table using EF and LINQ
+                var game2Info = (from allInfo in db.Results
+                                 where allInfo.GameID == 2
+                                 where allInfo.WeekNumber == 1
+                                 select allInfo);
+
+                // bind the result to the GameInfo GridView
+                GameInfoGridView2.DataSource = game2Info.ToList();
+                GameInfoGridView2.DataBind();
+
+
+                // query the information form Team 1
+                // query the Teams Table using EF and LINQ
+                var team21Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 2
+                                  where allInfo.TeamID == 102
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo1GridView2.DataSource = team21Info.ToList();
+                TeamInfo1GridView2.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team21Result = (from allResults in db.Results
+                                    where allResults.GameID == 2
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID1 == 102
                                    select allResults);
 
                 // bind the result to the TeamResult GridView
-                TeamResult2GridView1.DataSource = team2Result.ToList();
-                TeamResult2GridView1.DataBind();
+                TeamResult1GridView2.DataSource = team21Result.ToList();
+                TeamResult1GridView2.DataBind();
+
+
+                // query the information form Team 2
+                // query the Teams Table using EF and LINQ
+                var team22Info = (from allInfo in db.Teams
+                                  where allInfo.GameID == 2
+                                  where allInfo.TeamID == 103
+                                  select allInfo);
+
+                // bind the result to the TeamInfo GridView
+                TeamInfo2GridView2.DataSource = team22Info.ToList();
+                TeamInfo2GridView2.DataBind();
+
+                // query the Results Table using EF and LINQ
+                var team22Result = (from allResults in db.Results
+                                    where allResults.GameID == 2
+                                    where allResults.WeekNumber == 1
+                                    where allResults.TeamID2 == 103
+                                    select allResults);
+
+                // bind the result to the TeamResult GridView
+                TeamResult2GridView2.DataSource = team22Result.ToList();
+                TeamResult2GridView2.DataBind();
             }
 
         }
