@@ -11,7 +11,7 @@ namespace comp229_project1
 {
 
 
-    public partial class Update
+    public partial class AddResult
     {
     }
 }

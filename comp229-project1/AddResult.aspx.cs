@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace comp229_project1
 {
-    public partial class Update : System.Web.UI.Page
+    public partial class AddResult : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

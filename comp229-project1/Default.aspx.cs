@@ -8,11 +8,14 @@ using System.Web.UI.WebControls;
 // using statements that are required to connect to EF DB
 using comp229_project1.Models;
 using System.Web.ModelBinding;
+using System.Diagnostics;
 
 namespace comp229_project1
 {
+   
     public partial class Default : System.Web.UI.Page
     {
+        static int currentWeek = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
             // if loading the page for the first time
@@ -24,10 +27,14 @@ namespace comp229_project1
         }
 
         /// <summary>
-        /// This method gets the result data from the DB
+        /// This method gets the game results from the DB
         /// </summary>
         private void GetResults()
         {
+            // update page title with week information
+            Debug.WriteLine(currentWeek);
+            Page.Title = "Game - Week " + currentWeek;
+
             // connect to EF DB
             using (GameContext db = new GameContext())
             {
@@ -35,7 +42,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var game1Info = (from allInfo in db.Results
                                  where allInfo.GameID == 1
-                                 where allInfo.WeekNumber == 1
+                                 where allInfo.WeekNumber == currentWeek
                                  select allInfo);
 
                 // bind the result to the GameInfo GridView
@@ -65,7 +72,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team11Result = (from allResults in db.Results
                                     where allResults.GameID == 1
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID1 == 100
                                     select allResults);
 
@@ -88,7 +95,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team12Result = (from allResults in db.Results
                                     where allResults.GameID == 1
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID2 == 101
                                     select allResults);
 
@@ -101,7 +108,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var game2Info = (from allInfo in db.Results
                                  where allInfo.GameID == 2
-                                 where allInfo.WeekNumber == 1
+                                 where allInfo.WeekNumber == currentWeek
                                  select allInfo);
 
                 // bind the result to the GameInfo GridView
@@ -123,7 +130,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team21Result = (from allResults in db.Results
                                     where allResults.GameID == 2
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID1 == 102
                                    select allResults);
 
@@ -146,7 +153,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team22Result = (from allResults in db.Results
                                     where allResults.GameID == 2
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID2 == 103
                                     select allResults);
 
@@ -159,7 +166,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var game3Info = (from allInfo in db.Results
                                  where allInfo.GameID == 3
-                                 where allInfo.WeekNumber == 1
+                                 where allInfo.WeekNumber == currentWeek
                                  select allInfo);
 
                 // bind the result to the GameInfo GridView
@@ -181,7 +188,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team31Result = (from allResults in db.Results
                                     where allResults.GameID == 3
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID1 == 104
                                     select allResults);
 
@@ -204,7 +211,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team32Result = (from allResults in db.Results
                                     where allResults.GameID == 3
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID2 == 105
                                     select allResults);
 
@@ -217,7 +224,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var game4Info = (from allInfo in db.Results
                                  where allInfo.GameID == 4
-                                 where allInfo.WeekNumber == 1
+                                 where allInfo.WeekNumber == currentWeek
                                  select allInfo);
 
                 // bind the result to the GameInfo GridView
@@ -239,7 +246,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team41Result = (from allResults in db.Results
                                     where allResults.GameID == 4
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID1 == 106
                                     select allResults);
 
@@ -262,7 +269,7 @@ namespace comp229_project1
                 // query the Results Table using EF and LINQ
                 var team42Result = (from allResults in db.Results
                                     where allResults.GameID == 4
-                                    where allResults.WeekNumber == 1
+                                    where allResults.WeekNumber == currentWeek
                                     where allResults.TeamID2 == 107
                                     select allResults);
 
@@ -274,27 +281,55 @@ namespace comp229_project1
 
         protected void PreviousButton_Click(object sender, EventArgs e)
         {
-
+            // from deleted button so abandoned
         }
 
         protected void NextButton_Click(object sender, EventArgs e)
         {
-
+            // from deleted button so abandoned
         }
 
+        /// <summary>
+        /// This method sets the current week to previous one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void PreviousWeekButton_Click(object sender, EventArgs e)
         {
-
+            if (currentWeek == 1)
+            {
+                // if the current week is the 1st one, then set previous week to the last one
+                currentWeek = 52;
+            }
+            else
+            {
+                currentWeek -= 1;
+            }
+            this.GetResults();
         }
 
+        /// <summary>
+        /// This method sets the current week to next one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void NextWeekButton_Click(object sender, EventArgs e)
         {
-
+            if (currentWeek == 52)
+            {
+                // if the current week is the last one, then set next week back to the 1st one
+                currentWeek = 1;
+            }
+            else
+            {
+                currentWeek += 1;
+            }
+            this.GetResults();
         }
 
         protected void TeamResult1GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            // TBD
         }
     }
 }
