@@ -291,5 +291,10 @@ namespace comp229_project1
         {
 
         }
+
+        protected void TeamResult1GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
     }
 }

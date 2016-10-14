@@ -76,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\background.jpg" />
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -119,7 +120,7 @@
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
-    <Content Include="Update.aspx" />
+    <Content Include="AddResult.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,17 +160,16 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Update.aspx.cs">
-      <DependentUpon>Update.aspx</DependentUpon>
+    <Compile Include="AddResult.aspx.cs">
+      <DependentUpon>AddResult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Update.aspx.designer.cs">
-      <DependentUpon>Update.aspx</DependentUpon>
+    <Compile Include="AddResult.aspx.designer.cs">
+      <DependentUpon>AddResult.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
