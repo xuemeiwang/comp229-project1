@@ -6,7 +6,8 @@
 <%-- Default.aspx File --%>
 <%-- Website: http://comp229-project1.azurewebsites.net --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container" style="font-family: 'Bungee Inline', cursive;">
+    <%-- div class="container" style="font-family: 'Bungee Inline', cursive; font-size:small;" --%>
+    <div class="container" style="font-family: hammersmith-one, sans-serif;">
         <div class="table-responsive">
         <table class="table table-condensed">
             <thead hidden="hidden">
