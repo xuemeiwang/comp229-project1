@@ -126,6 +126,7 @@
   <ItemGroup>
     <Content Include="AddResult.aspx" />
     <Content Include="Assets\images\background.jpg" />
+    <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\GameContext.cs" />
     <Compile Include="Models\Result.cs" />
