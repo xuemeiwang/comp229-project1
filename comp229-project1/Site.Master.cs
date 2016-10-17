@@ -28,7 +28,10 @@ namespace comp229_project1
                     break;
                 case "Login":
                     login.Attributes.Add("Class", "active");
-                    break;               
+                    break;
+                default:
+                    home.Attributes.Add("Class", "active");
+                    break;
             }
         }
     }

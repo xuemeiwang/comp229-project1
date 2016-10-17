@@ -5,7 +5,7 @@
 <%-- Date: Oct 4, 2016 --%>
 <%-- Register.aspx File --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container" style="font-family: hammersmith-one, sans-serif;">
         <div class="row">
             <div class="col-md-offset-4 col-md-4">
                 <div class="alert alert-danger" id="AlertFlash" runat="server" visible="false">
@@ -16,7 +16,7 @@
                 --%>
                 <h5>All Fields are Required</h5>
                 <br />
-                <div class="panel panel-primary">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h1 class="panel-title"><i class="fa fa-user-plus fa-lg"></i>Register</h1>
                     </div>
