@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label class="control-label" for="GameIDTextBox">Game ID</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="GameIDTextBox"
-                        placeholder="Game Week" required="true" type="number" min="1" max="4" ></asp:TextBox>
+                        placeholder="Game ID" required="true" type="number" min="1" max="4" ></asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -39,9 +39,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="SpectatorTextBox">Team 2 Score</label>
+                    <label class="control-label" for="SpectatorTextBox">Spectators</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="SpectatorTextBox"
-                        placeholder="Spectator" required="true" type="number" min="0" max="100000" ></asp:TextBox>
+                        placeholder="Spectators" required="true" type="number" min="0" max="100000" ></asp:TextBox>
                 </div>
 
                 <div class="text-right">

@@ -23,7 +23,7 @@ namespace comp229_project1
             authenticationManager.SignOut();
 
             // redirect the user to the Default page
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("/Default.aspx");
         }
     }
 }

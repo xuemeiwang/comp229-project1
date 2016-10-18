@@ -26,7 +26,7 @@ namespace comp229_project1
         protected void CancelButton_Click(object sender, EventArgs e)
         {
             // redirect back to the Default page
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("/Default.aspx");
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace comp229_project1
                 db.SaveChanges();
 
                 // redirect back to Default page
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("/Default.aspx");
             }
         }
     }

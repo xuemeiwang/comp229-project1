@@ -38,8 +38,14 @@ namespace comp229_project1
                 // sign in the user
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
 
+                /* The simple redirect throws exception System.Threading.ThreadAbortException in mscorlib.dll ("Thread was being aborted.")
+                 * Suggestion @ https://blogs.msdn.microsoft.com/tmarq/2009/06/25/correct-use-of-system-web-httpresponse-redirect/
+                 * Response.Redirect(url, false);
+                 * Context.ApplicationInstance.CompleteRequest();
+                 * However, I won't try it here. Maybe later.
+                */
                 // redirect the user
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("/Default.aspx");
             }
             // user is not found
             else
