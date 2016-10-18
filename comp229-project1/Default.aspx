@@ -268,13 +268,15 @@
 
                 <tr>
                     <td style="text-align:left; border:none">
-                        <asp:LinkButton ID="PreviousWeekButton" runat="server" Text="<i class='fa fa-backward fa-lg' aria-hidden='true'></i> Previous Week" CssClass="btn btn-success btn-sm" OnClick="PreviousWeekButton_Click" />
+                        <asp:LinkButton ID="PreviousWeekButton" runat="server" Text="<i class='fa fa-backward fa-lg' aria-hidden='true'></i> Previous Week"
+                            CssClass="btn btn-success btn-sm" OnClick="PreviousWeekButton_Click" />
                     </td>
                     <td style="text-align:center; border:none">
                         <a href="AddResult.aspx" class="btn btn-success btn-sm"><i class="fa fa-plus-square fa-lg"></i> Add</a>
                     </td>
                     <td style="text-align:right; border:none">
-                        <asp:LinkButton ID="NextWeekButton" runat="server" Text="<i class='fa fa-forward fa-lg' aria-hidden='true'></i> Next Week" CssClass="btn btn-success btn-sm" OnClick="NextWeekButton_Click" />
+                        <asp:LinkButton ID="NextWeekButton" runat="server" Text="<i class='fa fa-forward fa-lg' aria-hidden='true'></i> Next Week"
+                            CssClass="btn btn-success btn-sm" OnClick="NextWeekButton_Click" />
                     </td>
                 </tr>
             </tbody>

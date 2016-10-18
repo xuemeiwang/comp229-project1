@@ -126,6 +126,7 @@
   <ItemGroup>
     <Content Include="AddResult.aspx" />
     <Content Include="Assets\images\background.jpg" />
+    <Content Include="Assets\images\logo.png" />
     <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
