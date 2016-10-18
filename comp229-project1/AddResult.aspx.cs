@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 // required for EF DB access
 using comp229_project1.Models;
 using System.Web.ModelBinding;
+using System.Diagnostics;
 
 namespace comp229_project1
 {
@@ -15,7 +16,41 @@ namespace comp229_project1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if((!IsPostBack) && (Request.QueryString.Count > 0))
+            {
+                this.GetResult();
+            }
+        }
 
+        /// <summary>
+        /// This method populates the form with existing data from db
+        /// </summary>
+        protected void GetResult()
+        {
+            // find out game week and ID from URL
+            int gameWeek = Convert.ToInt32(Request.QueryString["WeekNumber"]);
+            int gameID = Convert.ToInt32(Request.QueryString["GameID"]);
+            Debug.WriteLine("week number: " + gameWeek + " game id: " + gameID);
+
+            // connect to the EF DB
+            using(GameContext db = new GameContext())
+            {
+                // populate a game result object instance
+                Result updatedResult = (from results in db.Results
+                                        where results.WeekNumber == gameWeek
+                                        where results.GameID == gameID
+                                        select results).FirstOrDefault();
+
+                // map the result properties to the form control
+                if(updatedResult != null)
+                {
+                    GameWeekTextBox.Text = updatedResult.WeekNumber.ToString();
+                    GameIDTextBox.Text = updatedResult.GameID.ToString();
+                    Team1ScoreTextBox.Text = updatedResult.TeamScore1.ToString();
+                    Team2ScoreTextBox.Text = updatedResult.TeamScore2.ToString();
+                    SpectatorTextBox.Text = updatedResult.Spectator.ToString();
+                }
+            }
         }
 
         /// <summary>

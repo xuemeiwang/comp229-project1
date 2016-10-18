@@ -21,7 +21,7 @@
                     <td class="success">
                         <asp:GridView ID="GameInfoGridView1" runat="server" AutoGenerateColumns="false"
                             CssClass="table table-striped table-hover table-condensed"
-                            DataKeyNames="GameID" OnRowDeleting="TeamResult1GridView1_RowDeleting">
+                            DataKeyNames="GameID, WeekNumber" OnRowDeleting="TeamResult1GridView1_RowDeleting">
                             <Columns>
                                 <asp:TemplateField HeaderText="Game Information" Visible="true" />
                                 <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
@@ -34,8 +34,8 @@
                                 <asp:BoundField DataField="Spectator" HeaderText="Spectators" Visible="true" />
                                 <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square fa-lg'></i> Edit"
                                     NavigateUrl="~/AddResult.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm"
-                                    runat="server" DataNavigateUrlFields="GameID"
-                                    DataNavigateUrlFormatString="AddResult.aspx?GameID={0}" />
+                                    runat="server" DataNavigateUrlFields="WeekNumber,GameID"
+                                    DataNavigateUrlFormatString="AddResult.aspx?WeekNumber={0}&GameID={1}" />
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-minus-square fa-lg'></i> Delete"
                                     ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
@@ -90,7 +90,7 @@
                     <td class="info">
                         <asp:GridView ID="GameInfoGridView2" runat="server" AutoGenerateColumns="false"
                             CssClass="table table-striped table-hover table-condensed"
-                            DataKeyNames="GameID" OnRowDeleting="TeamResult1GridView1_RowDeleting">
+                            DataKeyNames="GameID" OnRowDeleting="GameInfoGridView2_RowDeleting">
                             <Columns>
                                 <asp:TemplateField HeaderText="Game Information" Visible="true" />
                                 <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
@@ -103,8 +103,8 @@
                                 <asp:BoundField DataField="Spectator" HeaderText="Spectators" Visible="true" />
                                 <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square fa-lg'></i> Edit"
                                     NavigateUrl="~/AddResult.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm"
-                                    runat="server" DataNavigateUrlFields="GameID"
-                                    DataNavigateUrlFormatString="AddResult.aspx?GameID={0}" />
+                                    runat="server" DataNavigateUrlFields="WeekNumber,GameID"
+                                    DataNavigateUrlFormatString="AddResult.aspx?WeekNumber={0}&GameID={1}" />
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-minus-square fa-lg'></i> Delete"
                                     ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
@@ -150,7 +150,7 @@
                     <td class="danger">
                         <asp:GridView ID="GameInfoGridView3" runat="server" AutoGenerateColumns="false"
                             CssClass="table table-striped table-hover table-condensed"
-                            DataKeyNames="GameID" OnRowDeleting="TeamResult1GridView1_RowDeleting">
+                            DataKeyNames="GameID" OnRowDeleting="GameInfoGridView3_RowDeleting">
                             <Columns>
                                 <asp:TemplateField HeaderText="Game Information" Visible="true" />
                                 <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
@@ -163,8 +163,8 @@
                                 <asp:BoundField DataField="Spectator" HeaderText="Spectators" Visible="true" />
                                 <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square fa-lg'></i> Edit"
                                     NavigateUrl="~/AddResult.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm"
-                                    runat="server" DataNavigateUrlFields="GameID"
-                                    DataNavigateUrlFormatString="AddResult.aspx?GameID={0}" />
+                                    runat="server" DataNavigateUrlFields="WeekNumber,GameID"
+                                    DataNavigateUrlFormatString="AddResult.aspx?WeekNumber={0}&GameID={1}" />
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-minus-square fa-lg'></i> Delete"
                                     ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>
@@ -210,7 +210,7 @@
                     <td class="warning">
                         <asp:GridView ID="GameInfoGridView4" runat="server" AutoGenerateColumns="false"
                             CssClass="table table-striped table-hover table-condensed"
-                            DataKeyNames="GameID" OnRowDeleting="TeamResult1GridView1_RowDeleting">
+                            DataKeyNames="GameID" OnRowDeleting="GameInfoGridView4_RowDeleting">
                             <Columns>
                                 <asp:TemplateField HeaderText="Game Information" Visible="true" />
                                 <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" />
@@ -223,8 +223,8 @@
                                 <asp:BoundField DataField="Spectator" HeaderText="Spectators" Visible="true" />
                                 <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square fa-lg'></i> Edit"
                                     NavigateUrl="~/AddResult.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm"
-                                    runat="server" DataNavigateUrlFields="GameID"
-                                    DataNavigateUrlFormatString="AddResult.aspx?GameID={0}" />
+                                    runat="server" DataNavigateUrlFields="WeekNumber,GameID"
+                                    DataNavigateUrlFormatString="AddResult.aspx?WeekNumber={0}&GameID={1}" />
                                 <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-minus-square fa-lg'></i> Delete"
                                     ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                             </Columns>

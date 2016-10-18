@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using comp229_project1.Models;
 using System.Web.ModelBinding;
 using System.Diagnostics;
+using System.Linq.Dynamic;
 
 namespace comp229_project1
 {
@@ -327,9 +328,151 @@ namespace comp229_project1
             this.GetResults();
         }
 
+        /// <summary>
+        /// This method deletes a record of game 1 from db
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void TeamResult1GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            // TBD
+            // check if a user is logged in
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                // redirect to Login page
+                Response.Redirect("/Login.aspx");
+            }
+
+            // store which row was clicked
+            int selectedRow = e.RowIndex;
+
+            // get the selected week and game ID using the Grid's DataKey collection
+            int gameWeek = Convert.ToInt32(GameInfoGridView1.DataKeys[selectedRow].Values["WeekNumber"]);
+            int gameID = Convert.ToInt32(GameInfoGridView1.DataKeys[selectedRow].Values["GameID"]);
+            Debug.WriteLine("week: " + gameWeek);
+            Debug.WriteLine("id: " + gameID);
+            
+            // using EF and LINQ to find the selected game result in DB and remove it
+            using(GameContext db = new GameContext())
+            {
+                // create object of the result class and store the query inside of it
+                Result deletedResult = (from results in db.Results
+                                        where results.WeekNumber == gameWeek
+                                        where results.GameID == gameID
+                                        select results).FirstOrDefault();
+
+                // remove the selected result from DB
+                db.Results.Remove(deletedResult);
+
+                // save the change back to DB
+                db.SaveChanges();
+
+                // refresh the page
+                this.GetResults();
+            }            
+        }
+
+        /// <summary>
+        /// This method deletes a record of game 2 from db
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void GameInfoGridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // check if a user is logged in
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                // redirect to Login page
+                Response.Redirect("/Login.aspx");
+            }
+
+            // using EF and LINQ to find the selected game result in DB and remove it
+            using (GameContext db = new GameContext())
+            {
+                // create object of the result class and store the query inside of it
+                Result deletedResult = (from results in db.Results
+                                        where results.WeekNumber == currentWeek
+                                        where results.GameID == 2
+                                        select results).FirstOrDefault();
+
+                // remove the selected result from DB
+                db.Results.Remove(deletedResult);
+
+                // save the change back to DB
+                db.SaveChanges();
+
+                // refresh the page
+                this.GetResults();
+            }
+        }
+
+        /// <summary>
+        /// This method deletes a record of game 3 from db
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void GameInfoGridView3_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // check if a user is logged in
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                // redirect to Login page
+                Response.Redirect("/Login.aspx");
+            }
+
+            // using EF and LINQ to find the selected game result in DB and remove it
+            using (GameContext db = new GameContext())
+            {
+                // create object of the result class and store the query inside of it
+                Result deletedResult = (from results in db.Results
+                                        where results.WeekNumber == currentWeek
+                                        where results.GameID == 3
+                                        select results).FirstOrDefault();
+
+                // remove the selected result from DB
+                db.Results.Remove(deletedResult);
+
+                // save the change back to DB
+                db.SaveChanges();
+
+                // refresh the page
+                this.GetResults();
+            }
+
+        }
+
+        /// <summary>
+        /// This method deletes a record of game 4 from db
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void GameInfoGridView4_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // check if a user is logged in
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                // redirect to Login page
+                Response.Redirect("/Login.aspx");
+            }
+
+            // using EF and LINQ to find the selected game result in DB and remove it
+            using (GameContext db = new GameContext())
+            {
+                // create object of the result class and store the query inside of it
+                Result deletedResult = (from results in db.Results
+                                        where results.WeekNumber == currentWeek
+                                        where results.GameID == 4
+                                        select results).FirstOrDefault();
+
+                // remove the selected result from DB
+                db.Results.Remove(deletedResult);
+
+                // save the change back to DB
+                db.SaveChanges();
+
+                // refresh the page
+                this.GetResults();
+            }
+
         }
     }
 }
